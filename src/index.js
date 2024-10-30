@@ -148,6 +148,7 @@ async function requestOpen(itemElement, uniqId, popInstant) {
             '  font-size: 20px;' +
             '}' +
             '#XIDARHalloweenModal .xidar-trick-treat img {' +
+            '  display: inline-block;' +
             '  vertical-align: middle;' +
             '  width: 50%;' +
             '}' +
