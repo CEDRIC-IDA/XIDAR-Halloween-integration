@@ -1,0 +1,1 @@
+export const xidarEncryptionKey = ',gsFOP1c36*^x05_TFHMgYw[:G-,#*'
