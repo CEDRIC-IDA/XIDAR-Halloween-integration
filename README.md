@@ -36,7 +36,7 @@ Replace `"path/to/dist/main.js"` with the correct path to the `main.js` file.
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/CEDRIC-IDA/XIDAR-Halloween-integration.git
    ```
 
 2. Navigate to the project folder and install dependencies:
@@ -54,7 +54,7 @@ Replace `"path/to/dist/main.js"` with the correct path to the `main.js` file.
 4. Once built, include the freshly generated `dist/main.js` file in your HTML footer:
 
    ```html
-   <script src="path/to/your/cloned-project/dist/main.js"></script>
+   <script src="path/to/dist/main.js"></script>
    ```
 
 This option allows you to fully control the script version used on your site.
@@ -66,7 +66,3 @@ This option allows you to fully control the script version used on your site.
 If you have questions or need further assistance, feel free to contact us.
 
 Thank you for partnering with us for XIDAR Halloween 2024! 🎃
-
---- 
-
-This README provides clear guidance for each integration option. Let me know if there are any specific details you’d like to add!
