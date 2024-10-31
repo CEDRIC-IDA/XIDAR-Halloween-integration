@@ -95,7 +95,7 @@ async function requestOpen(itemElement, uniqId, popInstant) {
 
     let itemToOpen = (await open(uniqId, popInstant, openInstant));
 
-    if (itemToOpen && itemToOpen.uniqId) {
+    if (itemToOpen) {
         //Create CSS
         if (document.contains(document.getElementById("XIDARHalloweenModalStyle"))) {
             document.getElementById("XIDARHalloweenModalStyle").remove();
