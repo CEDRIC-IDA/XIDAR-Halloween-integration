@@ -29,7 +29,11 @@ export const open = (uniqId, popInstant, openInstant) => {
             })
             .then(response => response.json())
             .then(async data => {
-                resolve(JSON.parse(await decryptSymmetric(data.data, encryptedMessage.iv, xidarEncryptionKey)));
+                if (data.code !== 200) {
+                    resolve(null);
+                } else {
+                    resolve(JSON.parse(await decryptSymmetric(data.data, encryptedMessage.iv, xidarEncryptionKey)));
+                }
             })
             .catch(error => {
                 resolve(null);

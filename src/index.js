@@ -9,7 +9,7 @@ window.navigation.addEventListener("navigate", (event) => {
 });
 
 function startXIDARTimeout() {
-    const testPhase = true; //Change to false once the event started
+    const testPhase = false; //Change to false once the event started
     const urlParams = new URLSearchParams(window.location.search);
     const isHalloweenTest = urlParams.get('halloweenTest');
     if ((testPhase && isHalloweenTest) || !testPhase) {
@@ -25,7 +25,7 @@ async function requestPop() {
     //Call API to get item (ot not)
     let itemToPop = (lastPopCall === null || (((new Date()).getTime() - lastPopCall.getTime()) / 1000) > 5) ? (await pop()) : null;
 
-    if (itemToPop) {
+    if (itemToPop && itemToPop.item) {
         lastPopCall = new Date();
         //Get page size
         const body = document.body,
@@ -74,7 +74,7 @@ async function requestPop() {
             document.getElementById("XIDARHalloweenItem").remove();
         }
 
-        const popInstant = Date.now();
+        const popInstant = (new Date()).getTime();
 
         const elImg = document.createElement('img');
         elImg.id = 'XIDARHalloweenItem'
@@ -89,13 +89,13 @@ async function requestPop() {
 
 
 async function requestOpen(itemElement, uniqId, popInstant) {
-    const openInstant = Date.now();
+    const openInstant = (new Date()).getTime();
 
     itemElement.remove();
 
     let itemToOpen = (await open(uniqId, popInstant, openInstant));
 
-    if (itemToOpen) {
+    if (itemToOpen && itemToOpen.uniqId) {
         //Create CSS
         if (document.contains(document.getElementById("XIDARHalloweenModalStyle"))) {
             document.getElementById("XIDARHalloweenModalStyle").remove();
